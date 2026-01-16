@@ -1,59 +1,104 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+ # 🎬 Cinema Digital - Sistema de Gestão de Filmes
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+---
 
-## About Laravel
+## 📥 Instalação Completa (com GitHub)
+```bash
+# Clonar o repositório
+git clone https://github.com/FranciscoMonteiro23/Sistema-de-gest-o-de-filmes.git
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+# Entrar na pasta do projeto
+cd Sistema-de-gest-o-de-filmes
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+# Instalar dependências do Composer
+composer install
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+# Copiar ficheiro de ambiente
+cp .env.example .env
 
-## Learning Laravel
+# Editar o ficheiro .env e configurar a base de dados:
+# DB_DATABASE=cinema_a22405043
+# DB_USERNAME=root
+# DB_PASSWORD=
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+# Gerar chave da aplicação
+php artisan key:generate
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# Criar base de dados no MySQL (phpMyAdmin ou terminal MySQL)
+CREATE DATABASE cinema_a22405043;
 
-## Laravel Sponsors
+# Executar migrations para criar as tabelas
+php artisan migrate
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+# Popular base de dados com dados de teste (OPCIONAL)
+php artisan db:seed
 
-### Premium Partners
+# Iniciar servidor de desenvolvimento
+php artisan serve
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+# Aceder à aplicação em: http://localhost:8000
+```
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 🌐 URLs de Acesso
+- **Homepage:** http://localhost:8000
+- **Filmes:** http://localhost:8000/movies
+- **Géneros:** http://localhost:8000/genres
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 🔑 Credenciais de Teste (se executaste seeders)
+- **Email:** joao@teste.com | **Password:** password
+- **Email:** maria@teste.com | **Password:** password
+- **Email:** pedro@teste.com | **Password:** password
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## 🗄️ Estrutura da Base de Dados
 
-## License
+**genres:** id, name (varchar 100, único), description (text, nullable), timestamps
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+**movies:** id, title (varchar 255), director (varchar 255), genre_id (FK → genres, cascadeOnDelete), release_year (integer, nullable), available (boolean, default true), timestamps
+
+**rentals:** id, movie_id (FK → movies, cascadeOnDelete), user_id (FK → users, restrictOnDelete), rental_date (date), return_date (date, nullable), returned (boolean, default false), timestamps
+
+**Relações Eloquent:** Genre hasMany Movie | Movie belongsTo Genre | Movie hasMany Rental | Rental belongsTo Movie | Rental belongsTo User
+
+---
+
+## ✅ Funcionalidades (25v + 2v bónus)
+
+**CRUD Filmes (10v):** Listar, Criar (validação: title obrigatório max 255, director obrigatório, genre_id obrigatório exists:genres, release_year opcional numeric max ano atual, available boolean), Visualizar, Editar, Apagar
+
+**CRUD Géneros (3v):** Listar, Criar (validação: name obrigatório único max 100, description opcional), Editar, Apagar
+
+**Migrations (5v):** 3 tabelas (genres, movies, rentals) com FKs corretas | **Models (3v):** Genre, Movie, Rental com relações Eloquent e $fillable | **Configuração (2v):** Projeto Laravel funcional com BD configurada | **Código (2v):** Organizado, boas práticas, README completo
+
+**Seeders BÓNUS (2v):** GenreSeeder (5 géneros: Ação, Comédia, Drama, Terror, Ficção Científica), UserSeeder (3 users: joao@teste.com, maria@teste.com, pedro@teste.com | password: password), MovieSeeder (5 filmes: Die Hard 1988, Superbad 2007, O Padrinho 1972, O Exorcista 1973, Blade Runner 1982)
+
+---
+
+## 📂 Estrutura de Ficheiros
+
+**Controllers:** MovieController.php, GenreController.php (resource) | **Models:** Genre.php, Movie.php, Rental.php | **Views:** layouts/app.blade.php, movies/ (index, create, edit, show), genres/ (index, create, edit), welcome.blade.php | **Migrations:** create_genres_table, create_movies_table, create_rentals_table | **Seeders:** GenreSeeder, MovieSeeder, UserSeeder | **Routes:** web.php (resource routes)
+
+---
+
+## 🔗 Repositório GitHub
+
+**Link:** https://github.com/FranciscoMonteiro23/Sistema-de-gest-o-de-filmes
+
+---
+
+## 🐛 Problemas Conhecidos
+
+Nenhum. Aplicação 100% funcional.
+
+---
+
+## 🎓 Tecnologias
+
+Laravel 11.x | PHP 8.2+ | MySQL 8.0 | Blade Templates | CSS3 | Git & GitHub
+
+---
