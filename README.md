@@ -4,6 +4,7 @@
 
 ## 📥 Instalação Completa (com GitHub)
 
+```
 # Clonar o repositório
 git clone https://github.com/FranciscoMonteiro23/Sistema-de-gest-o-de-filmes.git
 
