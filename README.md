@@ -73,7 +73,7 @@ php artisan serve
 
 **CRUD Géneros :** Listar, Criar (validação: name obrigatório único max 100, description opcional), Editar, Apagar
 
-**Migrations :** 3 tabelas (genres, movies, rentals) com FKs corretas | **Models (3v):** Genre, Movie, Rental com relações Eloquent e $fillable | **Configuração (2v):** Projeto Laravel funcional com BD configurada | **Código :** Organizado, boas práticas, README completo
+**Migrations :** 3 tabelas (genres, movies, rentals) com FKs corretas | **Models :** Genre, Movie, Rental com relações Eloquent e $fillable | **Configuração (2v):** Projeto Laravel funcional com BD configurada | **Código :** Organizado, boas práticas, README completo
 
 **Seeders BÓNUS :** GenreSeeder (5 géneros: Ação, Comédia, Drama, Terror, Ficção Científica), UserSeeder (3 users: joao@teste.com, maria@teste.com, pedro@teste.com | password: password), MovieSeeder (5 filmes: Die Hard 1988, Superbad 2007, O Padrinho 1972, O Exorcista 1973, Blade Runner 1982)
 
@@ -89,11 +89,6 @@ php artisan serve
 
 **Link:** https://github.com/FranciscoMonteiro23/Sistema-de-gest-o-de-filmes
 
----
-
-## 🐛 Problemas Conhecidos
-
-Nenhum. Aplicação 100% funcional.
 
 ---
 
