@@ -3,7 +3,7 @@
 ---
 
 ## 📥 Instalação Completa (com GitHub)
-```bash
+
 # Clonar o repositório
 git clone https://github.com/FranciscoMonteiro23/Sistema-de-gest-o-de-filmes.git
 
@@ -30,7 +30,7 @@ CREATE DATABASE cinema_a22405043;
 # Executar migrations para criar as tabelas
 php artisan migrate
 
-# Popular base de dados com dados de teste (OPCIONAL)
+# Popular base de dados com dados de teste 
 php artisan db:seed
 
 # Iniciar servidor de desenvolvimento
@@ -39,7 +39,6 @@ php artisan serve
 # Aceder à aplicação em: http://localhost:8000
 ```
 
----
 
 ## 🌐 URLs de Acesso
 - **Homepage:** http://localhost:8000
@@ -67,15 +66,15 @@ php artisan serve
 
 ---
 
-## ✅ Funcionalidades (25v + 2v bónus)
+## ✅ Funcionalidades 
 
-**CRUD Filmes (10v):** Listar, Criar (validação: title obrigatório max 255, director obrigatório, genre_id obrigatório exists:genres, release_year opcional numeric max ano atual, available boolean), Visualizar, Editar, Apagar
+**CRUD Filmes :** Listar, Criar (validação: title obrigatório max 255, director obrigatório, genre_id obrigatório exists:genres, release_year opcional numeric max ano atual, available boolean), Visualizar, Editar, Apagar
 
-**CRUD Géneros (3v):** Listar, Criar (validação: name obrigatório único max 100, description opcional), Editar, Apagar
+**CRUD Géneros :** Listar, Criar (validação: name obrigatório único max 100, description opcional), Editar, Apagar
 
-**Migrations (5v):** 3 tabelas (genres, movies, rentals) com FKs corretas | **Models (3v):** Genre, Movie, Rental com relações Eloquent e $fillable | **Configuração (2v):** Projeto Laravel funcional com BD configurada | **Código (2v):** Organizado, boas práticas, README completo
+**Migrations :** 3 tabelas (genres, movies, rentals) com FKs corretas | **Models (3v):** Genre, Movie, Rental com relações Eloquent e $fillable | **Configuração (2v):** Projeto Laravel funcional com BD configurada | **Código :** Organizado, boas práticas, README completo
 
-**Seeders BÓNUS (2v):** GenreSeeder (5 géneros: Ação, Comédia, Drama, Terror, Ficção Científica), UserSeeder (3 users: joao@teste.com, maria@teste.com, pedro@teste.com | password: password), MovieSeeder (5 filmes: Die Hard 1988, Superbad 2007, O Padrinho 1972, O Exorcista 1973, Blade Runner 1982)
+**Seeders BÓNUS :** GenreSeeder (5 géneros: Ação, Comédia, Drama, Terror, Ficção Científica), UserSeeder (3 users: joao@teste.com, maria@teste.com, pedro@teste.com | password: password), MovieSeeder (5 filmes: Die Hard 1988, Superbad 2007, O Padrinho 1972, O Exorcista 1973, Blade Runner 1982)
 
 ---
 
@@ -101,4 +100,4 @@ Nenhum. Aplicação 100% funcional.
 
 Laravel 11.x | PHP 8.2+ | MySQL 8.0 | Blade Templates | CSS3 | Git & GitHub
 
----
+
