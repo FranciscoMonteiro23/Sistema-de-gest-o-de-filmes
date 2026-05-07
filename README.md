@@ -48,7 +48,7 @@ php artisan serve
 
 ---
 
-## 🔑 Credenciais de Teste (se executaste seeders)
+## 🔑 Credenciais de Teste (seeders)
 - **Email:** joao@teste.com | **Password:** password
 - **Email:** maria@teste.com | **Password:** password
 - **Email:** pedro@teste.com | **Password:** password
